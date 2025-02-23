@@ -24,9 +24,10 @@ Gost-DOM is specifically written with [HTMX](https://htmx.org/) in mind.
 
 ## How it works
 
-Gost-DOM can consume the HTTP handler directly, bypassing the TCP stack,
-avoiding the overhead, as well as complexity in test code for managing server
-startup, and available ports.
+Gost-DOM can eliminate the overhead TCP transport layer by consuming the HTTP handler
+directly. As well as improving test performance, it eliminates all complexity
+of managing server startup and shutdown in test code; while providing the
+ability for isolated parallel tests of the web application.
 
 You can construct an instance of the
 [`Browser`](https://pkg.go.dev/github.com/gost-dom/browser#Browser) passing an
@@ -37,7 +38,7 @@ script engine, currently V8.[^2] The window provides a subset[^3] of the
 [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model),
 allowing developers to write the tests using a familiar syntax, the DOM.
 
-<div class="card p-2 my-2" markdown="1">
+<div class="card p-2 my-3 border-secondary" markdown="1">
 
 ```go
 // server.go
@@ -51,7 +52,7 @@ func init() {
 ```
 
 </div>
-<div class="card p-2 my-2" markdown="1">
+<div class="card p-2 my-3 border-secondary" markdown="1">
 
 ```go
 // server_test.go
