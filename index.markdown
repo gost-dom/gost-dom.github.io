@@ -92,7 +92,7 @@ the TCP stack and consume the `ServeHTTP` function directly.
     </li>
 </ul>
 
-## Better testing using the Shaman library.
+## Shaman - Helper library for more expressive tests
 
 An unrelease side project, Shaman, is in the works. This provides helpers on top
 of Gost allowing test cases to be more expressive, and simulate user behaviour.
