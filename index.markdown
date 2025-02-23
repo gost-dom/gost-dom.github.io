@@ -130,14 +130,13 @@ application, yieling benefits:
 - Makes the tests resilient to code refactoring.
 - Makes the tests resilient to changes to the visual design.
 
-### Sponsors only
+### Shaman is sponsors only
 
 At the time of the first pre-release, Shaman will be an exclusive to sponsors at the appropriate
 sponsorship tiers; It might eventually be made public.
 
-Hiding Shaman from the public hurts in the heart, but I need to provide a boon
-to attract sponsors. I hope to make it publically available, but I need to
-provide some boon for to encourage sponsorships.
+I hope to make shaman publically available in the future, but I need to provide some boon for
+to encourage sponsorships.
 
 ---
 
