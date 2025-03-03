@@ -38,7 +38,30 @@ script engine, currently V8.[^2] The window provides a subset[^3] of the
 [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model),
 allowing developers to write the tests using a familiar syntax, the DOM.
 
-<div class="card p-2 my-3 border-secondary" markdown="1">
+
+<div class="d-block d-md-none" markdown="1">
+
+```go
+// server.go
+var MyRootHttpServer = http.DefaultServeMux
+
+func init() {
+    http.HandleFunc("GET /", func(
+        w http.ResponseWriter, 
+        r *http.Request) {
+            w.Write([]byte(html))
+        })
+}
+
+const html = `<body>
+    <h1>My title</h1>
+    <p>Lorem ipsum</p>
+</body>`
+```
+
+</div>
+
+<div class="d-none d-md-block" markdown="1">
 
 ```go
 // server.go
@@ -50,16 +73,34 @@ func init() {
     })
 }
 ```
-
 </div>
-<div class="card p-2 my-3 border-secondary" markdown="1">
+
+
+<div class="d-block d-sm-none" markdown="1">
 
 ```go
 // server_test.go
 func TestMyServer(t *testing.T) {
     browser := browser.New(MyRootHttpServer)
-    win, err := browser.Open("/")
-    // ignore error, means invalid CSS selector
+    // Ignore errors in this example
+    win, _ := browser.Open("/")
+    pageTitle, _ := win
+        .Document()
+        .QuerySelector("h1")
+    assert.Equal(t, 
+        "My title", 
+        pageTitle.TextContent())
+}
+```
+</div>
+<div class="d-none d-sm-block" markdown="1">
+
+```go
+// server_test.go
+func TestMyServer(t *testing.T) {
+    browser := browser.New(MyRootHttpServer)
+    // Ignore errors in this example
+    win, _ := browser.Open("/")
     pageTitle, _ := win.Document().QuerySelector("h1")
     assert.Equal(t, "My title", pageTitle.TextContent())
 }
@@ -97,6 +138,27 @@ the TCP stack and consume the `ServeHTTP` function directly.
 An unrelease side project, Shaman, is in the works. This provides helpers on top
 of Gost allowing test cases to be more expressive, and simulate user behaviour.
 
+<div class="d-block d-md-none" markdown="1">
+```Go
+func TestMyServer(t *testing.T) {
+    window := OpenWindow()
+    scope := scope.New(window.Document())
+    form := scope.SubScope(
+        scope.ByRole(ariarole.Form))
+    form.Find(
+        ByRole(ariarole.TextBox),
+        ByName("Email"),
+    ).Type("smith@example.com")
+    form.Find(
+        ByRole(ariarole.Button),
+        ByName("Reset password"),
+    ).Click()
+    // Assert something happened!
+}
+```
+</div>
+
+<div class="d-none d-md-block" markdown="1">
 ```Go
 func TestMyServer(t *testing.T) {
     window := OpenWindow()
@@ -104,9 +166,10 @@ func TestMyServer(t *testing.T) {
     form := scope.SubScope(scope.ByRole(ariarole.Form))
     form.Find(ByRole(ariarole.TextBox), ByName("Email")).Type("smith@example.com")
     form.Find(ByRole(ariarole.Button), ByName("Reset password")).Click()
-    // Assert something happened.
+    // Assert something happened!
 }
 ```
+</div>
 
 ### Locate elements like users do
 
