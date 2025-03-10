@@ -8,7 +8,7 @@ title: Sponsor
 
 # Sponsoring
 
-This project need support if it is to become a complete mature usable project.
+This project needs support if it is to become a complete mature usable project.
 
 - A small or large contribution, one-time or recurring, as a token of gratitude.
 - A significant recurring contribution to financially support further
@@ -27,12 +27,13 @@ as new web standards become available.
 
 ## Means of sponsoring
 
+You can support the work through the following channels.
+
 - [Github sponsors](https://github.com/stroiman)
 - [Buy me a coffee](https://buymeacoffee.com/stroiman)
 
 Alternatively, I can send a formal invoice if you want to sponsor as a company.
 Please contact me at: [info@stroiman.com](mailto://info@stroiman.com)
-
 
 ## Legal information
 
