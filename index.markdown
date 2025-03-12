@@ -203,9 +203,9 @@ to encourage sponsorships.
 
 ---
 
-[^1]: You _can_ create an instance of [`html.Window`]() directly, and can
-    _potentially_ yield better performance in the current release. But the the
-    browser is it brings sensible defaults, and it's less likely to undergo a
+[^1]: You _can_ create an instance of `html.Window` directly, which can
+    _potentially_ yield better performance in the current release. It is
+    recommended to use the `Browser` to bring, It's less likely to undergo a
     breaking change.
 
 [^2]: Work is in progress to support [goja](https://github.com/dop251/goja) as a
