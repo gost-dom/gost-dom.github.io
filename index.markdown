@@ -193,14 +193,6 @@ application, yieling benefits:
 - Makes the tests resilient to code refactoring.
 - Makes the tests resilient to changes to the visual design.
 
-### Shaman is sponsors only
-
-At the time of the first pre-release, Shaman will be an exclusive to sponsors at the appropriate
-sponsorship tiers; It might eventually be made public.
-
-I hope to make shaman publically available in the future, but I need to provide some boon for
-to encourage sponsorships.
-
 ---
 
 [^1]: You _can_ create an instance of `html.Window` directly, which can
