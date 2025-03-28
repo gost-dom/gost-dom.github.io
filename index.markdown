@@ -22,6 +22,9 @@ APIs](https://developer.mozilla.org/en-US/docs/Web/API).
 
 Gost-DOM is specifically written with [HTMX](https://htmx.org/) in mind.
 
+More detailed information is found on the project's [github
+page](https://github.com/gost-dom/browser)
+
 ## How it works
 
 Gost-DOM can eliminate the overhead TCP transport layer by consuming the HTTP handler
